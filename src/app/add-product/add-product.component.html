@@ -1,0 +1,33 @@
+<app-nav-bar> </app-nav-bar>
+
+<div class="forms">
+    <div class="form-group">
+        <input class="form-control" type="text" [(ngModel)]="productName" placeholder="Product Name">
+    </div>
+    <div class="form-group">
+        <select class="form-control" name="companyName" [(ngModel)]="companyName">
+            <option *ngFor="let item of companies">
+                {{item.companyName}}
+            </option>
+        </select>
+    </div>
+    <div class="form-group">
+        <input class="form-control" type="text" [(ngModel)]="cost" placeholder="Cost">
+    </div>
+    <div class="form-group">
+        <button class="btn btn-light btn-block" (click)="onAddProduct()">Add Product</button>
+    </div>
+
+    <table class="table">
+        <tr>
+            <th> Company Name</th>
+            <th> Product Name</th>
+            <th> Cost</th>
+        </tr>
+        <tr *ngFor="let item of products">
+            <td> {{item.companyName}}</td>
+            <td> {{item.productName}}</td>
+            <td> {{item.cost}}</td>
+        </tr>
+    </table>
+</div>
